@@ -1,16 +1,20 @@
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-import { BrowserRouter } from 'react-router-dom';
-import { AppProvider } from './store/AppProvider';
+import { BrowserRouter } from "react-router-dom";
+import { AppProvider } from "./store/AppProvider";
+import { Firebase } from "./services/firebase/firebase";
 
-import './index.css';
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-    <BrowserRouter>
-        <AppProvider>
-            <App />
-        </AppProvider>
-    </BrowserRouter>
+  <BrowserRouter>
+    <Firebase>
+      <AppProvider>
+        <App />
+      </AppProvider>
+    </Firebase>
+  </BrowserRouter>
 );
