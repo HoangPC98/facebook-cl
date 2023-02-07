@@ -1,10 +1,10 @@
 
-const HeaderNotification = () => {
+const HeaderNotification = ({count_noti, list_noti}) => {
     return (
         <div id="header-notify" className="header-right__item">
-            <span className="header-right__item-count">1</span>
+            <span className="header-right__item-count">3</span>
             <i className="fas fa-bell header-right__item-notify" />
-            {/* <div className="header-right__item-more header-right__notify">
+            <div className="header-right__item-more header-right__notify">
                 <div className="notify-heading">
                     <h2 className="notify-heading__text">Thông báo</h2>
                     <div className="notify-heading__right">
@@ -23,7 +23,7 @@ const HeaderNotification = () => {
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
     )
 }

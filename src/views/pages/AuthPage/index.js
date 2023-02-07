@@ -8,7 +8,7 @@ const Auth = () => {
     var [page, setPage] = useState('login')
     const [noti, setNoti] = useState({
         title: '',
-        message: '',
+        body: '',
         placement: 'top'
     })
     const notify = {noti: noti, setNoti: setNoti}
@@ -19,7 +19,7 @@ const Auth = () => {
     return (
         <>
             {page === 'login' ? <Login nav={nav} notify={notify} /> : <SignUp nav={nav} notify={notify}/>}
-            <PushNotification id='push-noti' title={noti.title} message={noti.message} placement={noti.placement} />
+            <PushNotification id='push-noti' title={noti.title} body={noti.body} placement={noti.placement} />
         </>
     )
 }
