@@ -31,6 +31,13 @@ const fcmToken = (setTokenFound) => {
     });
 };
 
+const onMessageListener = () =>
+  new Promise((resolve) => {
+    onMessage(messaging, (payload) => {
+      resolve(payload);
+    });
+});
+
 function Firebase({ children }) {
   return (
     <FirebaseProvider
@@ -47,4 +54,4 @@ function Firebase({ children }) {
   );
 }
 
-export { fcmToken, Firebase };
+export { fcmToken, Firebase, onMessageListener };

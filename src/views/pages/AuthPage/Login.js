@@ -53,16 +53,14 @@ const Login = ({ nav, notify }) => {
     const submitLogin = async () => {
         const response = await http.post('/auth/login', data);
         if(response.code !== 201) {
-            console.log("==============Error:")
             notify.setNoti({
                 title: response.message,
-                message: '',
+                body: response.message,
                 placement: 'top'
             })
-            document.getElementById('push-noti').click();
+            document.getElementById('push-noti-alert').click();
         }
         else {
-            console.log('okokokokokokoko')
             localStorage.setItem('access_token', response.data.accessToken)
             window.location.href = '/home'
         }
